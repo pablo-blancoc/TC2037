@@ -1,0 +1,17 @@
+;Ejercicio 1
+(define (fahrenheit-to-celsius f)
+   (/ ( * (- f 32) 5) 9)
+)
+;El codigo de la funcion de conversión funciona directamente implementando la fórmula de conversión donde la entrada de la función es el valor en fahrenheit a convertir y la salida es la temperatura en celsius. Se resuelven las operaciones directamente
+;(fahrenheit-to-celsius fu)
+
+;Ejercicio 2
+(define (sign n)
+  (cond
+    ((= n 0) 0)
+    ((< n 0) -1)
+    ((> n 0) 1)
+  )
+)
+;El codigo de la funcion para definir el signo del numero funciona mediante conditional donde se definen los distintos casos que podrian suceder.
+;(sign n)
