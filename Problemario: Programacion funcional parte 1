@@ -15,3 +15,26 @@
 )
 ;El codigo de la funcion para definir el signo del numero funciona mediante conditional donde se definen los distintos casos que podrian suceder.
 ;(sign n)
+
+(define (roots a b c)
+(/ (+ (- 0 b) (sqrt (- (expt b 2) (* 4 (* a c))))) (* 2 a))
+)
+
+;El codigo de la funcion de roots realiza la solucion de una ecuacion cuadratica por medio de los tres coeficientes 'a b c' ademas se uso sqrt para la raiz cuadrada y expt para elevar al cuadrado
+;(roots a b c)
+
+(define (calculator w h)
+(/ w (expt h 2))
+)
+
+(define (bmi weight height)
+(cond
+    ((< (calculator weight height) 20) 'Underweight )
+    ((< (calculator weight height) 25) 'Normal )
+    ((< (calculator weight height) 30) 'obese1 )
+    ((< (calculator weight height) 40) 'obese2 )
+    ((> (calculator weight height) 39) 'obese3 )
+  )
+)
+; El codigo de la funcion ibm esta dividido en dos funciones una que calcula el ibm y dentro del otro hace la comparacion mediante los diferentes casos que existen 
+;(bmi weight height)
