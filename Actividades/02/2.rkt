@@ -14,4 +14,10 @@
 
 
 ; Ejercicio 06 - Pablo
-
+(define (deep-reverse l)
+    (if (null? l)
+        '()
+        (if (list? (car l))
+            (append (dr (cdr l)) (list (dr (car l))))
+            (append (dr (cdr l)) (list (car l)))))
+)
