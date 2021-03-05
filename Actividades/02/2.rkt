@@ -9,8 +9,16 @@
 
 
 ; Ejercicio 03 - Sebas
-
-
+;Funcion recursiva que rota n elementos a la izquierda. Se hizo uso de funcion llamada append que basicamente devuelve una lista con los elementos de las dos listas dadas. 
+;A diferencia de list esta no genera una lista con listas dentro. Otra funcion usada es la funcion reverse que invierte la lista entera.
+(define (rotate-left n lista)
+    (cond 
+          ((null? lista) lista)
+          ((= n 0) lista)
+          ((< n 0) (rotate-left (+ n 1) (append (list (car (reverse '(a b c d e f g)))) (reverse (cdr (reverse '(a b c d e f g)))))))
+          (else (rotate-left (- n 1) (append (cdr lista) (list (car lista)))))
+    )
+)
 
 
 ; Ejercicio 06 - Pablo
