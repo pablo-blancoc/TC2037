@@ -39,6 +39,50 @@
 )
 
 ; Ejercicio 06 - Pablo
+; Primero se revisa que la lista que se entrega no venga vacía. Si viene vacía se regresa vacía, sino se pasa a otra función que lo que hace es llamarse recursivamente hasta que se dupliquen todos
+;   los valores dentro de la lista (como si fuera un while, o un forEach). Ya que se duplicaron cada uno de los valores entonces se pasa a una función que voltea toda la lista porque habían acabado volteados.
+;   Ya que se voltean entonces se regresa la lista con los duplicados.
+(define (reverse l)
+    (if (null? l)
+        '()
+        (append (reverse (cdr l)) (list (car l)))
+    )
+)
 
+(define (d new old)
+    (if (null? (cdr old))
+        (reverse (append (cons (car old) old) new))
+        (d (cons (car old) (cons (car old) new)) (cdr old)))
+)
+
+(define (duplicate l)
+    (if (null? l)
+        '()
+        (d '() l))
+)
 
 ; Ejercicio 10 - Pablo
+; Primero se revisa que la lista que se entrega no venga vacía. Si viene vacía se regresa vacía, sino se pasa a otra función que lo que hace es llamarse recursivamente hasta que cada uno de los números positivos
+;   de esa lista pasa a otra lista, como si fuera un forEach. No se hace la revisión de si el dato es un número ya que como no tenía casos de prueba así dentro del archivo de tarea entonces se supuso que no 
+;   se requerían. Ya que pasaron todos los positivos a la otra lista se usa la función de reverse para volear el orden de la última lista, porque como se habían estado insertando en la cabeza de la otra lista habían 
+;   acabado voleados. Después se regresa la lista final.
+(define (reverse l)
+    (if (null? l)
+        '()
+        (append (reverse (cdr l)) (list (car l)))
+    )
+)
+
+(define (p new old)
+    (if (null? old)
+        (reverse new)
+        (if (> (car old) 0)
+            (p (cons (car old) new) (cdr old))
+            (p new (cdr old))))
+)
+
+(define (positives l)
+    (if (null? l)
+        '()
+        (p '() l))
+)
