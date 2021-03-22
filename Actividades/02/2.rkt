@@ -24,7 +24,7 @@
 ; Ejercicio 06 - Pablo
 ; Si la lista está vacía la regresa vacía. Sino, por cada elemento de la lista si es lista se vuelve a llamar la función para hacer el reverse del elemento y sino solo invierte el orden de ese elemento con 
 ;   lo demás que queda de la lista.
-(define (deep-reverse l)
+(define (dr l)
     (if (null? l)
         '()
         (if (list? (car l))
