@@ -1,4 +1,50 @@
-print("funciona")
+import pandas as pd
+
+
+def output(word: str, result: str):
+    """Se escribe dentro de un archivo el resultado de cada una de las palabras
+
+    Args:
+        word (str): La palabra que se leyó
+        result (str): El tipo de palabra que es
+    """
+    # Quita los espacios de las palabras
+    word = word.strip()
+    
+    states = [
+        "Estado inicial",
+        "Variable",
+        "Entero",
+        "Flotante",
+        "Error",
+        "Error",
+        "Real",
+        "Resta",
+        "Suma",
+        "División",
+        "Comentario",
+        "Multiplicación",
+        "Potencia",
+        "Asignación",
+        "Paréntesis que abre",
+        "Paréntesis que cierra",
+        "Error"
+    ]
+    
+    with open("result.txt", "a+") as file:
+        if word not in [" ", "\n", "\t", ""] and len(word) > 0:
+            if result == -1:
+                if len(word) > 40:
+                    file.write(word.ljust(len(word)+10))
+                else:
+                    file.write(word.ljust(40))
+                file.write("ERROR: Invalid character\n".ljust(24))    
+            else:
+                if len(word) > 40:
+                    file.write(word.ljust(len(word)+10))
+                else:
+                    file.write(word.ljust(40))
+                file.write(f"{states[result]}\n".ljust(len(states[result])))
 
 def lexerAritmetico(archivo: str):
     """
