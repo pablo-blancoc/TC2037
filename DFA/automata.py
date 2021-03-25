@@ -83,7 +83,6 @@ def analyze(line: str, data: pd.DataFrame):
                     output(line[start:index], state)
                     state = 0
                     start = index
-                    index += 1
                 else:
                     index += 1
             else:
