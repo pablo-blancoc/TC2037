@@ -22,6 +22,8 @@ echo "* Para correr el programa recuerda tener tu archivo para leer en esa carpe
 echo "* Para correr el programa solo debes usar el comando: python automata.py"
 echo "* Para desactivar el ambiente virtual usa el comando: deactivate"
 echo ""
+echo "** El resultado lo entrega en un nuevo archivo llamado result.txt **"
+echo ""
 echo ""
 echo "Todo listo! Diviertete!!"
 echo "-- Brucelords"

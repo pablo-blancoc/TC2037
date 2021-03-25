@@ -5,6 +5,8 @@ Por:
 * Diego Velázquez
 * Sebastián Rojas
 
+NOTA: EL RESULTADO SE GUARDA EN UN NUEVO ARCHIVO LLAMADO result.txt
+
 PASOS PARA CORRER EL PROGRAMA:
 1. Activa el ambiente virtual de python usando el comando:
 	>> source venv/bin/activate
