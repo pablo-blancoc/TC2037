@@ -1,4 +1,9 @@
 # Archivos generados por la Mac
 .DS_Store
-**/venv
+*/.DS_Store
 
+# Archivos del proyecto
+*/venv
+*/__pycache__
+*/.git
+*/.gitignore
