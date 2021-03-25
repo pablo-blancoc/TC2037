@@ -1,0 +1,142 @@
+/*
+COLORS
+white -> #F9F8F7
+blue  -> #161E2A
+green -> #1B6950
+gray  -> #768A80
+*/
+
+body {
+    background: #F9F8F7;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: 400 !important;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+header {
+    padding: 20px;
+}
+
+#page-title {
+    color: #161E2A;
+    font-size: 4rem;
+    font-weight: 700 !important;
+    margin: 10px;
+}
+
+header h2 {
+    color: #768A80;
+    font-size: 2rem;
+    margin: 10px;
+}
+
+main {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#footer {
+    background: #1B6950;
+    color: #F9F8F7;
+    position: static;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 300px;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* ----- CLASSES ----- */
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects {
+    margin: 50px;
+}
+
+.project {
+    border: solid #161E2A;
+    border-radius: 20px;
+    border-width: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.project:hover {
+    color: #F9F8F7;
+    background: #768A80;
+}
+
+.project-name {
+    font-size: 1rem;
+}
+
+.project-icon {
+    width: 5rem;
+}
+
+.class-info {
+    text-align: center;
+}
+
+.names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.names h5 {
+    margin: 10px;
+}
+.names h5:hover {
+    font-size: large;
+}
+
+.github {
+    text-align: center;
+}
+
+.go-to-repo {
+    width: 5rem;
+    cursor: pointer;
+}
+.go-to-repo:hover {
+    width: 6rem;
+}
+
+@media screen and (max-width: 600px) {
+    /* For mobile: */
+    #page-title {
+        font-size: 3rem;
+        font-weight: 700 !important;
+    }
+    header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .home {
+        font-size: .8rem;
+    }
+}
