@@ -8,6 +8,7 @@ curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/DFA/requireme
 pip3 install -r requirements.txt
 curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/DFA/tabla.csv > tabla.csv
 curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/DFA/automata.py > automata.py
+clear
 echo "============================================"
 echo "============================================"
 echo ""
@@ -21,3 +22,4 @@ echo ""
 echo ""
 echo "Todo listo! Diviertete!!"
 echo "-- Brucelords"
+echo ""
