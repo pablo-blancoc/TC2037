@@ -1,0 +1,208 @@
+1a.a1                                   Error
+=                                       Asignación
+1                                       Entero
+-1a                                     Error
+#include                                ERROR: Invalid character
+<iostream>                              ERROR: Invalid character
+using                                   Variable
+namespace                               Variable
+std;                                    ERROR: Invalid character
+int                                     Variable
+main                                    Variable
+(                                       Paréntesis que abre
+)                                       Paréntesis que cierra
+{                                       ERROR: Invalid character
+char                                    Variable
+line[150];                              ERROR: Invalid character
+int                                     Variable
+vowels,                                 ERROR: Invalid character
+consonants,                             ERROR: Invalid character
+digits,                                 ERROR: Invalid character
+spaces;                                 ERROR: Invalid character
+vowels                                  Variable
+=                                       Asignación
+consonants                              Variable
+=                                       Asignación
+digits                                  Variable
+=                                       Asignación
+spaces                                  Variable
+=                                       Asignación
+0;                                      ERROR: Invalid character
+cout                                    Variable
+<<                                      ERROR: Invalid character
+"Enter                                  ERROR: Invalid character
+a                                       Variable
+line                                    Variable
+of                                      Variable
+string:                                 ERROR: Invalid character
+";                                      ERROR: Invalid character
+cin.getline                             Error
+(                                       Paréntesis que abre
+line,                                   ERROR: Invalid character
+150                                     Entero
+)                                       Paréntesis que cierra
+;                                       ERROR: Invalid character
+for                                     Variable
+(                                       Paréntesis que abre
+int                                     Variable
+i                                       Variable
+=                                       Asignación
+0;                                      ERROR: Invalid character
+line[i]!                                ERROR: Invalid character
+=                                       Asignación
+'\0';                                   ERROR: Invalid character
++                                       Suma
++                                       Suma
+i                                       Variable
+)                                       Paréntesis que cierra
+{                                       ERROR: Invalid character
+if                                      Variable
+(                                       Paréntesis que abre
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'a'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'e'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'i'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'o'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'u'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'A'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'E'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'I'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'O'                                     ERROR: Invalid character
+||                                      ERROR: Invalid character
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'U'                                     ERROR: Invalid character
+)                                       Paréntesis que cierra
+{                                       ERROR: Invalid character
++                                       Suma
++                                       Suma
+vowels;                                 ERROR: Invalid character
+}                                       ERROR: Invalid character
+else                                    Variable
+if                                      Variable
+(                                       Paréntesis que abre
+(                                       Paréntesis que abre
+line[i]>                                ERROR: Invalid character
+=                                       Asignación
+'a'&&                                   ERROR: Invalid character
+line[i]<                                ERROR: Invalid character
+=                                       Asignación
+'z'                                     ERROR: Invalid character
+)                                       Paréntesis que cierra
+||                                      ERROR: Invalid character
+(                                       Paréntesis que abre
+line[i]>                                ERROR: Invalid character
+=                                       Asignación
+'A'&&                                   ERROR: Invalid character
+line[i]<                                ERROR: Invalid character
+=                                       Asignación
+'Z'                                     ERROR: Invalid character
+)                                       Paréntesis que cierra
+)                                       Paréntesis que cierra
+{                                       ERROR: Invalid character
++                                       Suma
++                                       Suma
+consonants;                             ERROR: Invalid character
+}                                       ERROR: Invalid character
+else                                    Variable
+if                                      Variable
+(                                       Paréntesis que abre
+line[i]>                                ERROR: Invalid character
+=                                       Asignación
+'0'                                     ERROR: Invalid character
+&&                                      ERROR: Invalid character
+line[i]<                                ERROR: Invalid character
+=                                       Asignación
+'9'                                     ERROR: Invalid character
+)                                       Paréntesis que cierra
+{                                       ERROR: Invalid character
++                                       Suma
++                                       Suma
+digits;                                 ERROR: Invalid character
+}                                       ERROR: Invalid character
+else                                    Variable
+if                                      Variable
+(                                       Paréntesis que abre
+line[i]                                 ERROR: Invalid character
+=                                       Asignación
+=                                       Asignación
+'                                       ERROR: Invalid character
+'                                       ERROR: Invalid character
+)                                       Paréntesis que cierra
+{                                       ERROR: Invalid character
++                                       Suma
++                                       Suma
+spaces;                                 ERROR: Invalid character
+}                                       ERROR: Invalid character
+}                                       ERROR: Invalid character
+cout                                    Variable
+<<                                      ERROR: Invalid character
+"Vowels:                                ERROR: Invalid character
+"                                       ERROR: Invalid character
+<<                                      ERROR: Invalid character
+vowels                                  Variable
+<<                                      ERROR: Invalid character
+endl;                                   ERROR: Invalid character
+cout                                    Variable
+<<                                      ERROR: Invalid character
+"Consonants:                            ERROR: Invalid character
+"                                       ERROR: Invalid character
+<<                                      ERROR: Invalid character
+consonants                              Variable
+<<                                      ERROR: Invalid character
+endl;                                   ERROR: Invalid character
+cout                                    Variable
+<<                                      ERROR: Invalid character
+"Digits:                                ERROR: Invalid character
+"                                       ERROR: Invalid character
+<<                                      ERROR: Invalid character
+digits                                  Variable
+<<                                      ERROR: Invalid character
+endl;                                   ERROR: Invalid character
+cout                                    Variable
+<<                                      ERROR: Invalid character
+"White                                  ERROR: Invalid character
+spaces:                                 ERROR: Invalid character
+"                                       ERROR: Invalid character
+<<                                      ERROR: Invalid character
+spaces                                  Variable
+<<                                      ERROR: Invalid character
+endl;                                   ERROR: Invalid character
+return                                  Variable
+0;                                      ERROR: Invalid character
+}                                       ERROR: Invalid character
