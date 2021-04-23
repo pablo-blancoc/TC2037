@@ -1,0 +1,47 @@
+(                                       Especiales
+define                                  Palabra reservada
+(                                       Especiales
+name                                    Identificador
+param1                                  Identificador
+-                                       Operador
+param2                                  Identificador
+)                                       Especiales
+; ( define ( variable variable operador variable ) ) comentario          Comentario
+body                                    Identificador
+;   aquí;   ocurre   la-mágia - variable comentario          Comentario
+)                                       Especiales
+; ( comentario                          Comentario
+(                                       Especiales
+name                                    Identificador
+'a                                      Simbolo
+)                                       Especiales
+; ( variable símbolo comentario         Comentario
+'name                                   Simbolo
++                                       Operador
+1                                       Numero
+-                                       Operador
+name                                    Identificador
+*                                       Operador
+3                                       Numero
+^                                       Operador
+4                                       Numero
+/                                       Operador
+5.2                                     Numero
+; símbolo operador variable operador número operador número operador número comentario          Comentario
+#t#f                                    Error
+; error comentario                      Comentario
+1.2ebc                                  Error
++                                       Operador
+#f                                      Logico
+; error operador falso comentario       Comentario
+'                                       Simbolo
+(                                       Especiales
+#t                                      Logico
++                                       Operador
+#f                                      Logico
+)                                       Especiales
+; símbolo comentario                    Comentario
+hol@2                                   ERROR: Invalid character
+-                                       Operador
+mundo2                                  Identificador
+; error operador variable comentario    Comentario

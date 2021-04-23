@@ -13,22 +13,24 @@ def output(word: str, result: str):
     
     states = [
         "Estado inicial",
-        "Variable",
-        "Entero",
-        "Flotante",
+        "Identificador",
+        "Numero",
+        "Numero",
         "Error",
         "Error",
-        "Real",
-        "Resta",
-        "Suma",
-        "División",
+        "Numero",
+        "Operador",
+        "Operador",
+        "Operador",
         "Comentario",
-        "Multiplicación",
-        "Potencia",
-        "Asignación",
-        "Paréntesis que abre",
-        "Paréntesis que cierra",
-        "Error"
+        "Operador",
+        "Operador",
+        "Operador",
+        "Especiales",
+        "Especiales",
+        "Error",
+        "Simbolo",
+        "Logico"
     ]
     
     with open("result.txt", "a+") as file:
@@ -44,7 +46,11 @@ def output(word: str, result: str):
                     file.write(word.ljust(len(word)+10))
                 else:
                     file.write(word.ljust(40))
-                file.write(f"{states[result]}\n".ljust(len(states[result])))
+                
+                if word == "define":
+                    file.write(f"Palabra reservada\n".ljust(len(states[result])))
+                else:
+                    file.write(f"{states[result]}\n".ljust(len(states[result])))
 
 
 def analyze(line: str, data: pd.DataFrame):
@@ -65,6 +71,10 @@ def analyze(line: str, data: pd.DataFrame):
         
         if letter == 'E':
             pass
+        elif letter == 't':
+            pass
+        elif letter == 'f':
+            pass
         elif letter == ' ':
             letter = "SPACE"
         elif letter.isalpha() and letter.islower():
@@ -79,14 +89,14 @@ def analyze(line: str, data: pd.DataFrame):
         # La letra no está dentro del vocabulario
         if letter not in data.columns or state == -1:
             if state == -1:
-                if letter in '+-/^*=()' or letter == "SPACE":
+                if letter in "+-/^*=();'" or letter == "SPACE":
                     output(line[start:index], state)
                     state = 0
                     start = index
                 else:
                     index += 1
             else:
-                if line[start:index] in "+-/^*=()" and line[start:index] != "":
+                if line[start:index] in "+-/^*=();'" and line[start:index] != "":
                     output(line[start:index], state)
                     start += 1
                 state = -1
@@ -145,5 +155,5 @@ def lexerAritmetico(archivo: str):
         return
     
 
-file = input("NOMBRE DEL ARCHIVO: ")
-lexerAritmetico(archivo=file)
+# file = input("NOMBRE DEL ARCHIVO: ")
+lexerAritmetico(archivo="test.scm")
