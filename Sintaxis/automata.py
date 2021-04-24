@@ -58,7 +58,7 @@ def output(word: str, result: str):
                 file.write("<br>")
                 
             else:
-                if word == "define"  :
+                if word in ["define" ,"cdr","car","append", "else","cond"]:
                     file.write("<span style=color:#e6194B;>"+ word + "</span>")
                 else:
                     file.write("<span style=color:"+colores[states[result]]+";>"+ word + "</span>")
@@ -102,6 +102,8 @@ def analyze(line: str, data: pd.DataFrame):
         elif letter == ' ':
             letter = "SPACE"
             pass
+        elif letter == ',':
+            letter = "SPACE"
         elif letter.isalpha() and letter.islower():
             letter = "alpha-minus"
         elif letter.isnumeric():
@@ -117,7 +119,7 @@ def analyze(line: str, data: pd.DataFrame):
         # La letra no está dentro del vocabulario
         if letter not in data.columns or state == -1:
             if state == -1:
-                if letter in "+-/^*=();'" or letter == "SPACE"  :
+                if letter in "+-/^*=();'" or letter == "SPACE" or line[start:index] != ","  :
                     output(line[start:index], state)
                     state = 0
                     start = index
