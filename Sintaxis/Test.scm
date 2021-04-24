@@ -9,5 +9,5 @@
 
 #t#f ; error comentario
 1.2ebc+#f ; error operador falso comentario
-'(#t+#f) ; símbolo comentario
-hol@2-mundo2 ; error operador variable comentario
+'(#t+#f) ; simbolo comentario
+hol@2<-mundo2 ; error operador variable comentario

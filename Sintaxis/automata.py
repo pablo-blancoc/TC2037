@@ -10,7 +10,8 @@ def output(word: str, result: str):
     """
     # Quita los espacios de las palabras
     word = word.strip()
-   # print(word)
+    print("result: "+str(result))
+    print("word:"+str(word))
     states = [
         "Estado inicial",
         "Identificador",
@@ -30,7 +31,8 @@ def output(word: str, result: str):
         "Especiales",
         "Error",
         "Simbolo",
-        "Logico"
+        "Logico",
+        "BR"
     ]
     
     colores = {
@@ -42,28 +44,27 @@ def output(word: str, result: str):
         "Especiales": "#9A6324",
         "Comentario": "#808000",
         "Palabras Reservadas": "#f032e6",
-        "Error": "#e6194B"
+        "Error": "#e6194B",
+        "BR": "<br>"
         }
     
     
     with open("result.html", "a+") as file:
-        if word not in [" ","\t ","\n" ,""] and len(word) > 0:
+        if word not in ["\t ", ""] and len(word) > 0:
             #print(word)
-            if result == -1:
+            if result <= 0:
                 file.write("<span style=color:#e6194B;>"+ word + "</span>")
+            elif result == 19:
+                file.write("<br>")
                 
             else:
-                if word == "define":
+                if word == "define"  :
                     file.write("<span style=color:#e6194B;>"+ word + "</span>")
-                if word == "br>":
-                    file.write("a")
                 else:
                     file.write("<span style=color:"+colores[states[result]]+";>"+ word + "</span>")
         
         
-        else: 
-            #file.write("aaaaaaaa")
-            file.write("<div> </div>")
+      
 
 def analyze(line: str, data: pd.DataFrame):
     """Analiza cada una de las lineas del archivo
@@ -72,11 +73,11 @@ def analyze(line: str, data: pd.DataFrame):
         line (str): La línea a analizar
     """
     # Inicializar las variables
-
-    line = line.replace("\n", "<br>").replace("\t", "")
-    if line.find("<br>"):
-        line = line+ " "
-        
+    
+    line = line.replace("\n", "?").replace("\t", "")
+   #line= line + ("\n")
+   # line = line.replace("\n", "")
+   # print(line)
     
     
     #print(line)
@@ -88,7 +89,7 @@ def analyze(line: str, data: pd.DataFrame):
     
     while index < length :
         letter = line[index]
-        print(letter)
+        #print(letter)
         
         if letter == 'E':
             pass
@@ -96,16 +97,18 @@ def analyze(line: str, data: pd.DataFrame):
             pass
         elif letter == 'f':
             pass
-        elif letter == '<br>':
-            letter = "BR"
+        elif letter == "?":
+            letter = "?"
         elif letter == ' ':
             letter = "SPACE"
+            pass
         elif letter.isalpha() and letter.islower():
             letter = "alpha-minus"
         elif letter.isnumeric():
             letter = "number"
         elif letter.isalpha() and letter.isupper():
             letter = "alpha-mayus"
+        
             
         
         else:
@@ -126,16 +129,19 @@ def analyze(line: str, data: pd.DataFrame):
                     start += 1
                 state = -1
                 index += 1
+            #print("state -1:"+str(state))
             continue
             
         if state == 0:
             # Estado inicial
+           
             state = data[letter][0]
             index += 1
             
             if state == 0:
                 start += 1
                 
+            #print("state o:"+str(state))     
         else:
             if state == data[letter][state]:
                 index += 1
@@ -146,9 +152,10 @@ def analyze(line: str, data: pd.DataFrame):
                     index -= 1
                 state = data[letter][state]
                 index += 1
+                #print("state r:"+str(state))
     
                 
-    
+    #print(state)
     output(line[start:index], state)
     
         
@@ -161,7 +168,7 @@ def lexerAritmetico(archivo: str):
     """
     # Leer la tabla de transición
     try:
-        tabla = pd.read_csv("tabla.csv")
+        tabla = pd.read_csv("tabla5.csv")
     except FileNotFoundError:
         print(f'ERROR: El archivo "{archivo}" no se ha encontrado.')
         return
