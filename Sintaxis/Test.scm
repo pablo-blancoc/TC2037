@@ -29,7 +29,7 @@ hol@2<-mundo2 ; error operador variable comentario
     (cond 
           ((null? lista) lista)
           ((= n 0) lista)
-          ((< n 0) (rotate-left (+ n 1) (append (list (car (reverse '(abcdefg)))) (reverse (cdr (reverse '(a b c d e f g)))))))
+          ((< n 0) (rotate-left (+ n 1) (append (list (car (reverse '(abcdefg) ))) (reverse (cdr (reverse '(abcdefg) ))))))
           (else (rotate-left (- n 1) (append (cdr lista) (list (car lista)))))
     )
 )

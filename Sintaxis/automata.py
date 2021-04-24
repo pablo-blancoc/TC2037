@@ -119,7 +119,7 @@ def analyze(line: str, data: pd.DataFrame):
         # La letra no está dentro del vocabulario
         if letter not in data.columns or state == -1:
             if state == -1:
-                if letter in "+-/^*=();'" or letter == "SPACE" or line[start:index] != ","  :
+                if letter in "+-/^*=();'" or letter == "SPACE" :
                     output(line[start:index], state)
                     state = 0
                     start = index
