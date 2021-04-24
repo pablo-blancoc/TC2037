@@ -10,7 +10,7 @@ def output(word: str, result: str):
     """
     # Quita los espacios de las palabras
     word = word.strip()
-    
+   # print(word)
     states = [
         "Estado inicial",
         "Identificador",
@@ -33,25 +33,37 @@ def output(word: str, result: str):
         "Logico"
     ]
     
-    with open("result.txt", "a+") as file:
-        if word not in [" ", "\n", "\t", ""] and len(word) > 0:
+    colores = {
+        "Numero": "#ffe119",
+        "Logico":"#4363d8",
+        "Simbolo": "#469990",
+        "Operador": "#911eb4",
+        "Identificador" :"#3cb44b",
+        "Especiales": "#9A6324",
+        "Comentario": "#808000",
+        "Palabras Reservadas": "#f032e6",
+        "Error": "#e6194B"
+        }
+    
+    
+    with open("result.html", "a+") as file:
+        if word not in [" ","\t ","\n" ,""] and len(word) > 0:
+            #print(word)
             if result == -1:
-                if len(word) > 40:
-                    file.write(word.ljust(len(word)+10))
-                else:
-                    file.write(word.ljust(40))
-                file.write("ERROR: Invalid character\n".ljust(24))    
-            else:
-                if len(word) > 40:
-                    file.write(word.ljust(len(word)+10))
-                else:
-                    file.write(word.ljust(40))
+                file.write("<span style=color:#e6194B;>"+ word + "</span>")
                 
+            else:
                 if word == "define":
-                    file.write(f"Palabra reservada\n".ljust(len(states[result])))
+                    file.write("<span style=color:#e6194B;>"+ word + "</span>")
+                if word == "br>":
+                    file.write("a")
                 else:
-                    file.write(f"{states[result]}\n".ljust(len(states[result])))
-
+                    file.write("<span style=color:"+colores[states[result]]+";>"+ word + "</span>")
+        
+        
+        else: 
+            #file.write("aaaaaaaa")
+            file.write("<div> </div>")
 
 def analyze(line: str, data: pd.DataFrame):
     """Analiza cada una de las lineas del archivo
@@ -60,14 +72,23 @@ def analyze(line: str, data: pd.DataFrame):
         line (str): La línea a analizar
     """
     # Inicializar las variables
-    line = line.replace("\n", "").replace("\t", "")
+
+    line = line.replace("\n", "<br>").replace("\t", "")
+    if line.find("<br>"):
+        line = line+ " "
+        
+    
+    
+    #print(line)
     state = 0
     length = len(line)
     start = 0
     index = 0
     
-    while index < length:
+    
+    while index < length :
         letter = line[index]
+        print(letter)
         
         if letter == 'E':
             pass
@@ -75,6 +96,8 @@ def analyze(line: str, data: pd.DataFrame):
             pass
         elif letter == 'f':
             pass
+        elif letter == '<br>':
+            letter = "BR"
         elif letter == ' ':
             letter = "SPACE"
         elif letter.isalpha() and letter.islower():
@@ -83,20 +106,22 @@ def analyze(line: str, data: pd.DataFrame):
             letter = "number"
         elif letter.isalpha() and letter.isupper():
             letter = "alpha-mayus"
+            
+        
         else:
             pass
         
         # La letra no está dentro del vocabulario
         if letter not in data.columns or state == -1:
             if state == -1:
-                if letter in "+-/^*=();'" or letter == "SPACE":
+                if letter in "+-/^*=();'" or letter == "SPACE"  :
                     output(line[start:index], state)
                     state = 0
                     start = index
                 else:
                     index += 1
             else:
-                if line[start:index] in "+-/^*=();'" and line[start:index] != "":
+                if line[start:index] in "+-/^*=();'" and line[start:index] != "" :
                     output(line[start:index], state)
                     start += 1
                 state = -1
@@ -121,7 +146,9 @@ def analyze(line: str, data: pd.DataFrame):
                     index -= 1
                 state = data[letter][state]
                 index += 1
+    
                 
+    
     output(line[start:index], state)
     
         
@@ -140,7 +167,7 @@ def lexerAritmetico(archivo: str):
         return
     
     # Crear un archivo de resultados limpio
-    with open("result.txt", "w") as file:
+    with open("result.html", "w") as file:
         pass
         
     # Leer el archivo a analizar
