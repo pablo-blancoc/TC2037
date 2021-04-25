@@ -32,7 +32,10 @@ def output(word: str, result: str):
         "Error",
         "Simbolo",
         "Logico",
-        "BR"
+        "BR",
+        "Error",
+        "Error",
+        "Simbolo"
     ]
     
     colores = {
@@ -48,17 +51,15 @@ def output(word: str, result: str):
         "BR": "<br>"
         }
     
-    
     with open("result.html", "a+") as file:
         if word not in ["\t ", ""] and len(word) > 0:
             #print(word)
             if result <= 0:
                 file.write("<span style=color:#e6194B;>"+ word + "</span>")
             elif result == 19:
-                file.write("<br>")
-                
+                file.write("<br>")    
             else:
-                if word in ["define" ,"cdr","car","append", "else","cond"]:
+                if word in ["define", "cdr" ,"car" ,"append" ,"else", "cond"]:
                     file.write("<span style=color:#e6194B;>"+ word + "</span>")
                 else:
                     file.write("<span style=color:"+colores[states[result]]+";>"+ word + "</span>")
@@ -75,21 +76,13 @@ def analyze(line: str, data: pd.DataFrame):
     # Inicializar las variables
     
     line = line.replace("\n", "?").replace("\t", "")
-   #line= line + ("\n")
-   # line = line.replace("\n", "")
-   # print(line)
-    
-    
-    #print(line)
     state = 0
     length = len(line)
     start = 0
     index = 0
     
-    
     while index < length :
         letter = line[index]
-        #print(letter)
         
         if letter == 'E':
             pass
@@ -98,10 +91,9 @@ def analyze(line: str, data: pd.DataFrame):
         elif letter == 'f':
             pass
         elif letter == "?":
-            letter = "?"
+            pass
         elif letter == ' ':
             letter = "SPACE"
-            pass
         elif letter == ',':
             letter = "SPACE"
         elif letter.isalpha() and letter.islower():
@@ -110,9 +102,6 @@ def analyze(line: str, data: pd.DataFrame):
             letter = "number"
         elif letter.isalpha() and letter.isupper():
             letter = "alpha-mayus"
-        
-            
-        
         else:
             pass
         
@@ -131,19 +120,16 @@ def analyze(line: str, data: pd.DataFrame):
                     start += 1
                 state = -1
                 index += 1
-            #print("state -1:"+str(state))
             continue
             
         if state == 0:
             # Estado inicial
-           
             state = data[letter][0]
             index += 1
             
             if state == 0:
                 start += 1
-                
-            #print("state o:"+str(state))     
+                    
         else:
             if state == data[letter][state]:
                 index += 1
@@ -154,10 +140,7 @@ def analyze(line: str, data: pd.DataFrame):
                     index -= 1
                 state = data[letter][state]
                 index += 1
-                #print("state r:"+str(state))
     
-                
-    #print(state)
     output(line[start:index], state)
     
         
@@ -170,7 +153,7 @@ def lexerAritmetico(archivo: str):
     """
     # Leer la tabla de transición
     try:
-        tabla = pd.read_csv("tabla5.csv")
+        tabla = pd.read_csv("tabla.csv")
     except FileNotFoundError:
         print(f'ERROR: El archivo "{archivo}" no se ha encontrado.')
         return
@@ -190,6 +173,4 @@ def lexerAritmetico(archivo: str):
         print(f'ERROR: El archivo "{archivo}" no se ha encontrado.')
         return
     
-
-# file = input("NOMBRE DEL ARCHIVO: ")
 lexerAritmetico(archivo="test.scm")
