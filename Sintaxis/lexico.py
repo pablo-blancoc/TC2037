@@ -1,5 +1,6 @@
 import pandas as pd
-
+import time
+start_time = time.time()
 
 def output(word: str, result: str):
     """Se escribe dentro de un archivo el resultado de cada una de las palabras
@@ -141,7 +142,7 @@ def analyze(line: str, data: pd.DataFrame):
     output(line[start:index], state)
     
         
-def resaltadorLexico():
+def resaltadorLexico(archivo: str):
     """
     Función principal donde se lee el archivo y se mandan a llamar las demás funciones para realizar el procesamiento
 
@@ -170,4 +171,5 @@ def resaltadorLexico():
         print(f'ERROR: El archivo "{archivo}" no se ha encontrado.')
         return
     
-resaltadorLexico(archivo="test.scm")
+resaltadorLexico(archivo="Test.scm")
+print("--- %s seconds ---" % (time.time() - start_time))
