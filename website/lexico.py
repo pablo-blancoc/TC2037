@@ -10,8 +10,7 @@ def output(word: str, result: str):
     """
     # Quita los espacios de las palabras
     word = word.strip()
-    print("result: "+str(result))
-    print("word:"+str(word))
+
     states = [
         "Estado inicial",
         "Identificador",
@@ -51,21 +50,19 @@ def output(word: str, result: str):
         "BR": "<br>"
         }
     
-    with open("result.html", "a+") as file:
+    with open("static/files/result.html", "a+") as file:
         if word not in ["\t ", ""] and len(word) > 0:
             #print(word)
             if result <= 0:
-                file.write("<span style=color:#e6194B;>"+ word + "</span>")
+                file.write("<span style=color:#e6194B;>"+ word + " " + "</span>")
             elif result == 19:
                 file.write("<br>")    
             else:
                 if word in ["define", "cdr" ,"car" ,"append" ,"else", "cond"]:
-                    file.write("<span style=color:#e6194B;>"+ word + "</span>")
+                    file.write("<span style=color:#e6194B;>"+ word + " " + "</span>")
                 else:
-                    file.write("<span style=color:"+colores[states[result]]+";>"+ word + "</span>")
-        
-        
-      
+                    file.write("<span style=color:"+colores[states[result]]+";>"+ word + " " + "</span>")
+
 
 def analyze(line: str, data: pd.DataFrame):
     """Analiza cada una de las lineas del archivo
@@ -144,7 +141,7 @@ def analyze(line: str, data: pd.DataFrame):
     output(line[start:index], state)
     
         
-def lexerAritmetico(archivo: str):
+def resaltadorLexico():
     """
     Función principal donde se lee el archivo y se mandan a llamar las demás funciones para realizar el procesamiento
 
@@ -153,24 +150,20 @@ def lexerAritmetico(archivo: str):
     """
     # Leer la tabla de transición
     try:
-        tabla = pd.read_csv("tabla.csv")
+        tabla = pd.read_csv("lexico/tabla.csv")
     except FileNotFoundError:
-        print(f'ERROR: El archivo "{archivo}" no se ha encontrado.')
         return
     
     # Crear un archivo de resultados limpio
-    with open("result.html", "w") as file:
+    with open("static/files/result.html", "w") as file:
         pass
         
     # Leer el archivo a analizar
     try:
-        with open(archivo, 'r') as file:
+        with open("static/files/archivo-lexico", 'r') as file:
             lines = file.readlines()
         for line in lines:
             analyze(line, tabla)
             
     except FileNotFoundError:
-        print(f'ERROR: El archivo "{archivo}" no se ha encontrado.')
         return
-    
-lexerAritmetico(archivo="test.scm")

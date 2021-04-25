@@ -1,37 +1,66 @@
+humano(pam).
+humano(tom).
+humano(bob).
+humano(liz).
+humano(ann).
+humano(pat).
+humano(jim).
 
-.poster-detalle-sobre {
-    position: relative;
-    top: -75px;
-    left: -10px;
-    margin-bottom: -75px;
-}
+masculino(tom).
+masculino(bob).
+masculino(jim).
 
-.titulo {
-    width: 100%;
-    position: absolute;
-    color: white;
-    background-color: red;
-    padding: 5px 5px 40px 5px;
+femenino(pam).
+femenino(pat).
+femenino(ann).
+femenino(liz).
 
+hijos(pam, bob).
+hijos(tom, bob).
+hijos(tom, liz).
+hijos(bob, ann).
+hijos(bob, pat).
+hijos(pat, jim).
 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-}
+padres(bob, pam).
+padres(bob, tom).
+padres(liz, tom).
+padres(ann, bob).
+padres(pat, bob).
+padres(jim, pat).
 
-.titulo h1{
-    position: absolute;
-    top: 28px;
-    left: 5px;
-}
+mama(X, Y):-
+    femenino(Y),
+    padres(X, Y).
 
-.card-actor {
-    height: 210px;
-}
+papa(X, Y):-
+    masculino(Y),
+    padres(X, Y).
 
-.actor-name {
-    position: relative;
-    top:15px;
-}
+hijo(X, Y):-
+    masculino(Y),
+    hijos(X, Y).
+
+hija(X, Y):-
+    femenino(Y),
+    hijos(X, Y).
+
+abuelos(X, Z):-
+    padres(X, Y),
+    padres(Y, Z).
+
+hermanos(X, Y):-
+    padres(X, Z),
+    hijos(Z, Y),
+    X\=Y.
+
+tios(X, Y):-
+    padres(X, Z),
+    hermanos(Z, Y).
+
+ancestros(X, Y):-
+    padres(X, Y).
+
+ancestros(X, Y):-
+    padres(X, Z),
+    ancestros(Z, Y).

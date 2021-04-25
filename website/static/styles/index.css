@@ -70,18 +70,21 @@ main {
 
 .projects {
     margin: 50px;
+    text-align: center;
 }
 
 .project {
     border: solid #161E2A;
     border-radius: 20px;
     border-width: 5px;
-    padding: 15px;
+    cursor: pointer;
+    width: 45%;
+    margin: 0 1% 100px 1%;
+    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 .project:hover {
     color: #F9F8F7;
@@ -94,6 +97,7 @@ main {
 
 .project-icon {
     width: 5rem;
+    margin-bottom: 10px;
 }
 
 .class-info {

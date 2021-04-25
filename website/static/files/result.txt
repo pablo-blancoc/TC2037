@@ -1,268 +1,306 @@
-.poster 		 -> Error
-- 		 -> Resta
-detalle 		 -> Variable
-- 		 -> Resta
-sobre 		 -> Variable
-{ 		 -> ERROR: Invalid character
-: 		 -> ERROR: Invalid character
-position 		 -> Variable
-; 		 -> ERROR: Invalid character
-relative 		 -> Variable
-: 		 -> ERROR: Invalid character
-top 		 -> Variable
-; 		 -> ERROR: Invalid character
--75px 		 -> Error
-: 		 -> ERROR: Invalid character
-left 		 -> Variable
-; 		 -> ERROR: Invalid character
--10px 		 -> Error
-margin 		 -> Variable
-- 		 -> Resta
-: 		 -> ERROR: Invalid character
-bottom 		 -> Variable
-; 		 -> ERROR: Invalid character
--75px 		 -> Error
-} 		 -> ERROR: Invalid character
-.titulo 		 -> Error
-{ 		 -> ERROR: Invalid character
-: 		 -> ERROR: Invalid character
-width 		 -> Variable
-% 		 -> ERROR: Invalid character
-; 		 -> ERROR: Invalid character
-100 		 -> Entero
-: 		 -> ERROR: Invalid character
-position 		 -> Variable
-; 		 -> ERROR: Invalid character
-absolute 		 -> Variable
-: 		 -> ERROR: Invalid character
-color 		 -> Variable
-; 		 -> ERROR: Invalid character
-white 		 -> Variable
-background 		 -> Variable
-- 		 -> Resta
-: 		 -> ERROR: Invalid character
-color 		 -> Variable
-; 		 -> ERROR: Invalid character
-red 		 -> Variable
-: 		 -> ERROR: Invalid character
-padding 		 -> Variable
-5px 		 -> Error
-5px 		 -> Error
-40px 		 -> Error
-; 		 -> ERROR: Invalid character
-5px 		 -> Error
-/ 		 -> División
-* 		 -> Multiplicación
-Permalink 		 -> Variable
-- 		 -> Resta
-use 		 -> Variable
-to 		 -> Variable
-edit 		 -> Variable
-and 		 -> Variable
-share 		 -> Variable
-this 		 -> Variable
-: 		 -> ERROR: Invalid character
-gradient 		 -> Variable
-: 		 -> ERROR: Invalid character
-http 		 -> Variable
-# 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-& 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-; 		 -> ERROR: Invalid character
-//colorzilla.com/gradient-editor/000000+0000000+1000.65+00+100Neutral+Density */ 		 -> Comentario
-: 		 -> ERROR: Invalid character
-background 		 -> Variable
-- 		 -> Resta
-moz 		 -> Variable
-- 		 -> Resta
-linear 		 -> Variable
-- 		 -> Resta
-gradient 		 -> Variable
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-top 		 -> Variable
-rgba 		 -> Variable
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0000.65 		 -> Flotante
-) 		 -> Paréntesis que cierra
-% 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0 		 -> Entero
-rgba 		 -> Variable
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0000 		 -> Entero
-) 		 -> Paréntesis que cierra
-% 		 -> ERROR: Invalid character
-100 		 -> Entero
-; 		 -> ERROR: Invalid character
-) 		 -> Paréntesis que cierra
-/ 		 -> División
-* 		 -> Multiplicación
-FF3.6 		 -> Error
--15 		 -> Entero
-* 		 -> Multiplicación
-/ 		 -> División
-: 		 -> ERROR: Invalid character
-background 		 -> Variable
-- 		 -> Resta
-webkit 		 -> Variable
-- 		 -> Resta
-linear 		 -> Variable
-- 		 -> Resta
-gradient 		 -> Variable
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-top 		 -> Variable
-rgba 		 -> Variable
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0000.65 		 -> Flotante
-) 		 -> Paréntesis que cierra
-% 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0rgba 		 -> Error
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0000 		 -> Entero
-) 		 -> Paréntesis que cierra
-% 		 -> ERROR: Invalid character
-100 		 -> Entero
-; 		 -> ERROR: Invalid character
-) 		 -> Paréntesis que cierra
-/ 		 -> División
-* 		 -> Multiplicación
-Chrome10 		 -> Variable
-, 		 -> ERROR: Invalid character
--25Safari5 		 -> Error
-.1 		 -> Error
--6 		 -> Entero
-* 		 -> Multiplicación
-/ 		 -> División
-: 		 -> ERROR: Invalid character
-background 		 -> Variable
-linear 		 -> Variable
-- 		 -> Resta
-gradient 		 -> Variable
-( 		 -> Paréntesis que abre
-to 		 -> Variable
-, 		 -> ERROR: Invalid character
-bottom 		 -> Variable
-rgba 		 -> Variable
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0000.65 		 -> Flotante
-) 		 -> Paréntesis que cierra
-% 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0rgba 		 -> Error
-( 		 -> Paréntesis que abre
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-0000 		 -> Entero
-) 		 -> Paréntesis que cierra
-% 		 -> ERROR: Invalid character
-100 		 -> Entero
-; 		 -> ERROR: Invalid character
-) 		 -> Paréntesis que cierra
-/ 		 -> División
-* 		 -> Multiplicación
-, 		 -> ERROR: Invalid character
-W3C 		 -> Variable
-IE10 		 -> Variable
-, 		 -> ERROR: Invalid character
-+ 		 -> Suma
-FF16 		 -> Variable
-, 		 -> ERROR: Invalid character
-+ 		 -> Suma
-Chrome26 		 -> Variable
-, 		 -> ERROR: Invalid character
-+ 		 -> Suma
-Opera12 		 -> Variable
-, 		 -> ERROR: Invalid character
-+ 		 -> Suma
-Safari7 		 -> Variable
-+ 		 -> Suma
-* 		 -> Multiplicación
-/ 		 -> División
-: 		 -> ERROR: Invalid character
-filter 		 -> Variable
-: 		 -> ERROR: Invalid character
-progidDXImageTransform.Microsoft 		 -> Error
-.gradient 		 -> Error
-( 		 -> Paréntesis que abre
-startColorstr 		 -> Variable
-' 		 -> ERROR: Invalid character
-# 		 -> ERROR: Invalid character
-= 		 -> Asignación
-' 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-a6000000 		 -> Variable
-endColorstr 		 -> Variable
-' 		 -> ERROR: Invalid character
-# 		 -> ERROR: Invalid character
-= 		 -> Asignación
-' 		 -> ERROR: Invalid character
-, 		 -> ERROR: Invalid character
-00000000GradientType 		 -> Error
-= 		 -> Asignación
-0 		 -> Entero
-; 		 -> ERROR: Invalid character
-) 		 -> Paréntesis que cierra
-/ 		 -> División
-* 		 -> Multiplicación
-IE6 		 -> Variable
--9 		 -> Entero
-* 		 -> Multiplicación
-/ 		 -> División
-} 		 -> ERROR: Invalid character
-.titulo 		 -> Error
-{ 		 -> ERROR: Invalid character
-h1 		 -> Variable
-: 		 -> ERROR: Invalid character
-position 		 -> Variable
-; 		 -> ERROR: Invalid character
-absolute 		 -> Variable
-: 		 -> ERROR: Invalid character
-top 		 -> Variable
-; 		 -> ERROR: Invalid character
-28px 		 -> Error
-: 		 -> ERROR: Invalid character
-left 		 -> Variable
-; 		 -> ERROR: Invalid character
-5px 		 -> Error
-} 		 -> ERROR: Invalid character
-.card 		 -> Error
-- 		 -> Resta
-actor 		 -> Variable
-{ 		 -> ERROR: Invalid character
-: 		 -> ERROR: Invalid character
-height 		 -> Variable
-; 		 -> ERROR: Invalid character
-210px 		 -> Error
-} 		 -> ERROR: Invalid character
-.actor 		 -> Error
-- 		 -> Resta
-name 		 -> Variable
-{ 		 -> ERROR: Invalid character
-: 		 -> ERROR: Invalid character
-position 		 -> Variable
-; 		 -> ERROR: Invalid character
-relative 		 -> Variable
-: 		 -> ERROR: Invalid character
-; 		 -> ERROR: Invalid character
-top15px 		 -> Variable
-} 		 -> ERROR: Invalid character
+humano                                  Variable
+(                                       Paréntesis que abre
+pam                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+humano                                  Variable
+(                                       Paréntesis que abre
+tom                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+humano                                  Variable
+(                                       Paréntesis que abre
+bob                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+humano                                  Variable
+(                                       Paréntesis que abre
+liz                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+humano                                  Variable
+(                                       Paréntesis que abre
+ann                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+humano                                  Variable
+(                                       Paréntesis que abre
+pat                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+humano                                  Variable
+(                                       Paréntesis que abre
+jim                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+masculino                               Variable
+(                                       Paréntesis que abre
+tom                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+masculino                               Variable
+(                                       Paréntesis que abre
+bob                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+masculino                               Variable
+(                                       Paréntesis que abre
+jim                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+femenino                                Variable
+(                                       Paréntesis que abre
+pam                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+femenino                                Variable
+(                                       Paréntesis que abre
+pat                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+femenino                                Variable
+(                                       Paréntesis que abre
+ann                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+femenino                                Variable
+(                                       Paréntesis que abre
+liz                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijos                                   Variable
+(                                       Paréntesis que abre
+pam,                                    ERROR: Invalid character
+bob                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijos                                   Variable
+(                                       Paréntesis que abre
+tom,                                    ERROR: Invalid character
+bob                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijos                                   Variable
+(                                       Paréntesis que abre
+tom,                                    ERROR: Invalid character
+liz                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijos                                   Variable
+(                                       Paréntesis que abre
+bob,                                    ERROR: Invalid character
+ann                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijos                                   Variable
+(                                       Paréntesis que abre
+bob,                                    ERROR: Invalid character
+pat                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijos                                   Variable
+(                                       Paréntesis que abre
+pat,                                    ERROR: Invalid character
+jim                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+padres                                  Variable
+(                                       Paréntesis que abre
+bob,                                    ERROR: Invalid character
+pam                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+padres                                  Variable
+(                                       Paréntesis que abre
+bob,                                    ERROR: Invalid character
+tom                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+padres                                  Variable
+(                                       Paréntesis que abre
+liz,                                    ERROR: Invalid character
+tom                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+padres                                  Variable
+(                                       Paréntesis que abre
+ann,                                    ERROR: Invalid character
+bob                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+padres                                  Variable
+(                                       Paréntesis que abre
+pat,                                    ERROR: Invalid character
+bob                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+padres                                  Variable
+(                                       Paréntesis que abre
+jim,                                    ERROR: Invalid character
+pat                                     Variable
+)                                       Paréntesis que cierra
+.                                       Error
+mama                                    Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+femenino                                Variable
+(                                       Paréntesis que abre
+Y                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+papa                                    Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+masculino                               Variable
+(                                       Paréntesis que abre
+Y                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hijo                                    Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+masculino                               Variable
+(                                       Paréntesis que abre
+Y                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+hijos                                   Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hija                                    Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+femenino                                Variable
+(                                       Paréntesis que abre
+Y                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+hijos                                   Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+abuelos                                 Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Z                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+padres                                  Variable
+(                                       Paréntesis que abre
+Y,                                      ERROR: Invalid character
+Z                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+hermanos                                Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Z                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+hijos                                   Variable
+(                                       Paréntesis que abre
+Z,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+X\                                      ERROR: Invalid character
+=                                       Asignación
+Y.                                      Error
+tios                                    Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Z                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+hermanos                                Variable
+(                                       Paréntesis que abre
+Z,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+ancestros                               Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error
+ancestros                               Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+:                                       ERROR: Invalid character
+-                                       Resta
+padres                                  Variable
+(                                       Paréntesis que abre
+X,                                      ERROR: Invalid character
+Z                                       Variable
+)                                       Paréntesis que cierra
+,                                       ERROR: Invalid character
+ancestros                               Variable
+(                                       Paréntesis que abre
+Z,                                      ERROR: Invalid character
+Y                                       Variable
+)                                       Paréntesis que cierra
+.                                       Error

@@ -2,10 +2,11 @@ from flask import Flask, request, url_for, redirect, render_template, send_from_
 from werkzeug.utils import secure_filename
 import os
 from automata import lexerAritmetico
+from lexico import resaltadorLexico
 
 
 UPLOAD_FOLDER = './static/files'
-ALLOWED_EXTENSIONS = {'txt'}
+ALLOWED_EXTENSIONS = {'txt', 'csm', 'rkt', 'scm'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -52,6 +53,27 @@ def dfa():
             lexerAritmetico()   
             return redirect("static/files/result.txt")
     return render_template('dfa.html')
+
+
+@app.route('/lexico', methods=['GET', 'POST'])
+def lexico():
+    # Página del autómata finito deterministico
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename('archivo-lexico')
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # Mandar a llamar el procesamiento del archivo
+            resaltadorLexico()
+            return redirect("static/files/result.html")
+    return render_template('lexico.html')
 
 
 if __name__ == '__main__':

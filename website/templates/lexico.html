@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brucelords</title>
-    <link rel="stylesheet" href="../static/styles/index.css">
+    <title>DFA</title>
+    <link rel="stylesheet" href="../static/styles/dfa.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -12,25 +12,19 @@
 <body>
 
     <header class="center">
-        <h1 id="page-title">Brucelords</h1>
-        <h2>Aquí algunos proyectos de la clase</h2>
+        <div class="home">
+            <a href="{{ url_for('index') }}"><h6 >Ir a Inicio</h6></a>
+        </div>
+        <h1 id="page-title">Resaltador Léxico</h1>
     </header>
-    <main>
+    <main class="center" style="height: 300px;">
 
-        <section class="projects">
-            <a href="{{ url_for('dfa') }}">
-                <div class="project" id="adf">
-                    <h5 class="project-name">Autómata Determinista Finito</h5>
-                    <img class="project-icon" src="../static/img/icon-automata.png" alt="Ícono de un automata">
-                </div>
-            </a>
-            <a href="{{ url_for('lexico') }}">
-                <div class="project" id="adf">
-                    <h5 class="project-name">Resaltador Léxico</h5>
-                    <img class="project-icon" src="../static/img/icon-colors.png" alt="Ícono de un automata">
-                </div>
-            </a>
-        </section>
+        <h1 id="instructions">Sube un archivo con extensión '.csm' para probar el Resaltador Léxico</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+
         <div id="footer">
             <div class="class-info">
                 <h3>Implementación de métodos computacionales | Alex de Gante</h3>
@@ -45,10 +39,8 @@
                     <img src="../static/img/icon-github.png" alt="Go to repo" class="go-to-repo">
                 </a>
             </div>
-        </div>
-
+        </div id="footer">
     </main>
-    
 
 </body>
 </html>
