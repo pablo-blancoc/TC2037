@@ -52,16 +52,14 @@ def output(word: str, result: str):
     
     with open("static/files/result.html", "a+") as file:
         if word not in ["\t ", ""] and len(word) > 0:
-            #print(word)
-            if result <= 0:
+            if word in ["define", "cdr" ,"car" ,"append" ,"else", "cond"]:
+                    file.write("<span style=color:#f032e6;>"+ word + " " + "</span>")
+            elif result <= 0:
                 file.write("<span style=color:#e6194B;>"+ word + " " + "</span>")
             elif result == 19:
                 file.write("<br>")    
             else:
-                if word in ["define", "cdr" ,"car" ,"append" ,"else", "cond"]:
-                    file.write("<span style=color:#e6194B;>"+ word + " " + "</span>")
-                else:
-                    file.write("<span style=color:"+colores[states[result]]+";>"+ word + " " + "</span>")
+                file.write("<span style=color:"+colores[states[result]]+";>"+ word + " " + "</span>")
 
 
 def analyze(line: str, data: pd.DataFrame):
