@@ -7,19 +7,19 @@ from lexico import resaltadorLexico
 
 # VARIABLES A CAMBIAR
 BUF_SIZE = 10       # Tamaño del buffer de la cola (almacén)
-N = 4               # Número de consumidores
-PATH = "."          # Path a la carpeta a ejecutar
+N = 8               # Número de consumidores
+PATH = "./test"          # Path a la carpeta a ejecutar
 
 
 q = queue.Queue(BUF_SIZE)
 _sentinel = object()
-logging.basicConfig(level=logging.DEBUG, format='(%(threadName)s) %(message)s',)
+logging.basicConfig(level=logging.DEBUG, format='(%(threadName)9s) %(message)s',)
 
 class ProducerThread(threading.Thread):
-    def _init_(self, group=None, target=None, name=None,
+    def __init__(self, path: str = '.', group=None, target=None, name=None,
                  args=(), kwargs=None, verbose=None):
-        super(ProducerThread,self)._init_()
-        self.path = PATH
+        super(ProducerThread,self).__init__()
+        self.path = path
         self.target = target
         self.name = name
         self.done = False
@@ -67,13 +67,16 @@ class ConsumerThread(threading.Thread):
                     x = item.split("/")
                     x[-1] = x[-1].split(".")[0] + ".html"
                     salida = '/'.join(x)
-                    resaltadorLexico(archivo=item, salida=salida)
+                    try:
+                        resaltadorLexico(archivo=item, salida=salida)
+                    except:
+                        logging.error(f"Error al leer el archivo {str(item).split('/')[-1]} arrojado por el analizador.")
         return
 
 
 if __name__ == '__main__':
     start_time = time.time()
-    p = ProducerThread(name='producer')
+    p = ProducerThread(name='producer', path=PATH)
     p.start()
     c = []
     for i in range(N):
