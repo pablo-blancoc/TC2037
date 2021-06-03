@@ -8,7 +8,7 @@ from lexico import resaltadorLexico
 # VARIABLES A CAMBIAR
 BUF_SIZE = 10       # Tamaño del buffer de la cola (almacén)
 N = 4               # Número de consumidores
-PATH = ""           # Path a la carpeta a ejecutar
+PATH = "."          # Path a la carpeta a ejecutar
 
 
 q = queue.Queue(BUF_SIZE)
@@ -16,10 +16,10 @@ _sentinel = object()
 logging.basicConfig(level=logging.DEBUG, format='(%(threadName)s) %(message)s',)
 
 class ProducerThread(threading.Thread):
-    def _init_(self, path: str, group=None, target=None, name=None,
+    def _init_(self, group=None, target=None, name=None,
                  args=(), kwargs=None, verbose=None):
         super(ProducerThread,self)._init_()
-        self.path = path
+        self.path = PATH
         self.target = target
         self.name = name
         self.done = False
@@ -73,11 +73,11 @@ class ConsumerThread(threading.Thread):
 
 if __name__ == '__main__':
     start_time = time.time()
-    p = ProducerThread(name='producer', path=PATH)
+    p = ProducerThread(name='producer')
     p.start()
     c = []
     for i in range(N):
-        c.append(ConsumerThread(name=str(i)))
+        c.append(ConsumerThread(name=str(i+1)))
         c[i].start()
         
     while True:
