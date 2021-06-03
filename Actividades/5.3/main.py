@@ -6,12 +6,11 @@ import time
 from lexico import resaltadorLexico
 
 # VARIABLES A CAMBIAR
-BUF_SIZE = 10       # Tamaño del buffer de la cola (almacén)
-N = 8               # Número de consumidores
+N = 1               # Número de consumidores
 PATH = "./test"          # Path a la carpeta a ejecutar
 
 
-q = queue.Queue(BUF_SIZE)
+q = queue.Queue()
 _sentinel = object()
 logging.basicConfig(level=logging.DEBUG, format='(%(threadName)9s) %(message)s',)
 
@@ -28,10 +27,9 @@ class ProducerThread(threading.Thread):
         gen = self.generator()
         while True:
             try:
-                if not q.full():
-                    item = next(gen)
-                    q.put(item)
-                    logging.debug('Putting ' + str(item).split('/')[-1]  + ' : ' + str(q.qsize()) + ' items in queue')
+                item = next(gen)
+                q.put(item)
+                logging.debug('Putting ' + str(item).split('/')[-1]  + ' : ' + str(q.qsize()) + ' items in queue')
             except StopIteration:
                 logging.debug("=== NO ITEMS LEFT TO INSERT ===")
                 self.done = True
