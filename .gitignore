@@ -4,6 +4,7 @@
 
 # Archivos del proyecto
 */venv
-*/__pycache__
+*/__pycache__/*
 */.git
 */.gitignore
+Actividades/5.3/__pycache__/*
