@@ -5,8 +5,15 @@ import threading
 import time
 from lexico import resaltadorLexico
 
-logging.basicConfig(level=logging.DEBUG, format='(%(threadName)-9s) %(message)s',)
+# VARIABLES A CAMBIAR
+BUF_SIZE = 10       # Tamaño del buffer de la cola (almacén)
+N = 4               # Número de consumidores
+PATH = ""           # Path a la carpeta a ejecutar
+
+
+q = queue.Queue(BUF_SIZE)
 _sentinel = object()
+logging.basicConfig(level=logging.DEBUG, format='(%(threadName)s) %(message)s',)
 
 class ProducerThread(threading.Thread):
     def _init_(self, path: str, group=None, target=None, name=None,
@@ -63,12 +70,6 @@ class ConsumerThread(threading.Thread):
                     resaltadorLexico(archivo=item, salida=salida)
         return
 
-
-BUF_SIZE = 10
-N = 10
-PATH = "/Users/Pablo/Library/Mobile Documents/com~apple~CloudDocs/ITC/Semestre_4/MetodosComputacionales/repo/Actividades/5.3/test"
-q = queue.Queue(BUF_SIZE)
-    
 
 if __name__ == '__main__':
     start_time = time.time()

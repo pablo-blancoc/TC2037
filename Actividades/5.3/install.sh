@@ -8,6 +8,7 @@ curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/Actividades/5
 pip3 install -r requirements.txt
 curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/Actividades/5.3/lexico.py > lexico.py
 curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/Actividades/5.3/main.py > main.py
+curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/Actividades/5.3/tabla.csv > tabla.csv
 deactivate
 clear
 echo "============================================"
