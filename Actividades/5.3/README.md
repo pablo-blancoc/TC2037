@@ -14,7 +14,7 @@
 10. Ejecutar el comando: python main.py
 11. Verificar resultados en carpeta donde se corrió. En esta carpeta se generarán los archivos ```.html```.
 
-# Pasos para ejecutar resaltador léxico con hilos en MaMacOS
+# Pasos para ejecutar resaltador léxico con hilos en MacOS
 1. Abrir la terminal y ejecutar el siguiente comando 
 ```
 curl https://raw.githubusercontent.com/pablo-blancoc/TC2037/master/Actividades/5.3/install.sh --output install.sh && bash install.sh
